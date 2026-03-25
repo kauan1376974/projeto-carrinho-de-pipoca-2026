@@ -1,0 +1,331 @@
+        :root {
+            --laranja: hsl(25, 100%, 50%);
+            --laranja-hover: #E65A00;
+            --branco: #FFFFFF;
+            --gelo: #f8f9fa;
+            --texto: #2D2D2D;
+            --transicao: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #efefef;
+            background-image: url('./istockphoto-1171892371-1024x1024\ -\ Editado.png');
+            object-fit: cover;
+            color: var(--texto);
+            line-height: 1.8;
+        }
+
+        /* --- Navegação --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(248, 249, 250, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            border-bottom: 2px solid var(--laranja);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--texto);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transicao);
+        }
+
+        nav a:hover {
+            color: var(--laranja);
+        }
+
+        /* --- Estrutura de Seções --- */
+        section {
+            padding: 100px 10%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+        }
+
+        /* --- Início (Hero) --- */
+        #inicio {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: 35px;
+            background: transparent;
+        }
+
+        #inicio h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            background-color: rgba(248, 249, 250, 0.45);
+            border-radius: 30%;
+            padding: 20px;
+
+        }
+
+        #inicio span {
+            color: var(--laranja);
+        }
+
+        /* --- Sobre --- */
+        #sobre {
+            background-color: var(--laranja);
+            color: white;
+            border-radius: 40px;
+            margin-bottom: 60px;
+            /* Substitui os <br> */
+        }
+
+        #sobre .section-title {
+            color: white;
+        }
+
+        .section-title{
+
+             background-color: rgba(248, 249, 250, 0.45);
+            border-radius: 30%;
+            padding: 20px;
+       text-align: center;
+            }        
+
+         
+
+        #sobre .section-title::after {
+            background: rgba(255, 255, 255, 0.5);
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            margin-top: 10px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .img-container img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 20px;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+        }
+
+        /* --- Responsáveis --- */
+        #responsaveis {
+            background-color: var(--gelo);
+            border-radius: 40px;
+            padding: 80px 10%;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: var(--branco);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transicao);
+        }
+
+        .card h3 {
+            color: var(--laranja);
+            margin-bottom: 15px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 107, 0, 0.15);
+        }
+
+        /* --- Localização --- */
+        .info-box {
+            background: var(--laranja);
+            color: var(--branco);
+            padding: 50px;
+            border-radius: 30px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+
+        }
+
+
+
+
+
+        /* --- Contato --- */
+        #contato {
+            text-align: center;
+            padding: 100px 5%;
+        }
+
+        .btn-insta {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            display: inline-block;
+            transition: var(--transicao);
+        }
+
+        .btn-insta:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        
+        .insta-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            transition: all 0.3s ease;
+            animation: bounce 2s infinite;
+        }
+
+        .insta-float img {
+            width: 25px;
+            height: 25px;
+
+        }
+
+        .insta-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+
+        @media (max-width: 480px) {
+            .insta-float span {
+                display: none;
+            }
+
+            .insta-float {
+                padding: 15px;
+                right: 20px;
+                bottom: 20px;
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 10px;
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 0.5rem;
+            }
+
+            section {
+                padding: 80px 20px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            #inicio h1 {
+                font-size: 2.8rem;
+            }
+
+            /* Transforma o grid de 2 colunas em 1 coluna */
+            .grid-2,
+            .card-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            #sobre {
+                border-radius: 20px;
+            }
+
+            .info-box {
+                flex-direction: column;
+                padding: 30px;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .insta-float {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px;
+            }
+
+            .insta-float span {
+                display: none;
+            }
+
+            /* Deixa apenas o ícone no mobile */
+        }
