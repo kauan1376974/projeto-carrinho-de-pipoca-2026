@@ -434,6 +434,8 @@
             color: var(--texto-suave);
         }
 
+        
+
         .btn-submit {
             background: var(--laranja);
             color: white;
@@ -577,11 +579,95 @@
             opacity: 0;
             transform: translateY(40px);
             transition: opacity 0.7s ease, transform 0.7s ease;
+            background:  rgba(255,255,255,0.92);
+            border-radius: 30px;
         }
 
         .reveal.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* ===== COMO FUNCIONA ===== */
+        #como-funciona {
+            background: white;
+            border-radius: 40px;
+        }
+
+        .como-sub {
+            color: var(--texto-suave);
+            font-size: 1.05rem;
+            margin-top: -20px;
+            margin-bottom: 50px;
+        }
+
+        .steps-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .step {
+            flex: 1;
+            background: var(--gelo);
+            border-radius: 24px;
+            padding: 35px 30px;
+            border: 1.5px solid #f0ede8;
+            transition: var(--transicao);
+        }
+
+        .step:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(255,107,0,0.1);
+            border-color: rgba(255,107,0,0.25);
+        }
+
+        .step-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--laranja);
+            opacity: 0.25;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .step-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--texto);
+        }
+
+        .step-content p {
+            color: var(--texto-suave);
+            font-size: 0.93rem;
+            line-height: 1.75;
+        }
+
+        .step-arrow {
+            font-size: 1.8rem;
+            color: var(--laranja);
+            opacity: 0.4;
+            padding-top: 55px;
+            flex-shrink: 0;
+        }
+
+        .eventos-tipos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 40px;
+        }
+
+        .eventos-tipos span {
+            background: var(--laranja-claro);
+            color: var(--laranja-hover);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            border: 1.5px solid rgba(255,107,0,0.2);
         }
 
         /* ===== RESPONSIVO ===== */
@@ -604,6 +690,8 @@
 
             section:not(#inicio) { padding: 60px 6%; margin-bottom: 30px; border-radius: 24px; }
 
+            .steps-container { flex-direction: column; }
+            .step-arrow { display: none; }
             .insta-float span { display: none; }
             .insta-float { padding: 14px; }
         }
@@ -620,9 +708,9 @@
     <nav id="navbar">
         <a href="#inicio">Início</a>
         <a href="#sobre">Sobre</a>
-        <a href="#responsaveis">Responsáveis</a>
+        <a href="#como-funciona">Como Funciona</a>
         <a href="#local">Local</a>
-        <a href="#cadastro">Cadastro</a>
+        <a href="#orcamento">Orçamento</a>
         <a href="#contato">Contato</a>
     </nav>
 
@@ -644,7 +732,7 @@
             <div class="stat-label">Anos de tradição</div>
         </div>
         <div class="stat-item">
-            <span class="stat-num" data-target="10000">0</span>
+            <span class="stat-num" data-target="1000">0</span>
             <div class="stat-label">Clientes felizes</div>
         </div>
         <div class="stat-item">
@@ -703,11 +791,49 @@
         </div>
     </section>
 
-    <!-- CADASTRO -->
-    <section id="cadastro" class="reveal">
+    <!-- COMO FUNCIONA -->
+    <section id="como-funciona" class="reveal">
+        <h2 class="section-title">Como Funciona</h2>
+        <p class="como-sub">Levar a Pipocas Aguiar para o seu evento é simples assim:</p>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-num">01</div>
+                <div class="step-content">
+                    <h3>Entre em contato</h3>
+                    <p>Preencha o formulário de orçamento ou nos chame diretamente no WhatsApp com a data e o tipo do evento.</p>
+                </div>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step">
+                <div class="step-num">02</div>
+                <div class="step-content">
+                    <h3>Alinhamos os detalhes</h3>
+                    <p>Confirmamos disponibilidade, número de convidados, local e horário para garantir tudo certinho.</p>
+                </div>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step">
+                <div class="step-num">03</div>
+                <div class="step-content">
+                    <h3>A gente vai até você!</h3>
+                    <p>No dia do evento, levamos o carrinho completo. Seus convidados vão amar o aroma e o sabor fresquinho.</p>
+                </div>
+            </div>
+        </div>
+        <div class="eventos-tipos">
+            <span>🎂 Aniversários</span>
+            <span>💍 Casamentos</span>
+            <span>🎓 Formaturas</span>
+            <span>🏢 Eventos Corporativos</span>
+            <span>🎉 Festas em Geral</span>
+        </div>
+    </section>
+
+    <!-- ORÇAMENTO -->
+    <section id="orcamento" class="reveal">
         <div class="cadastro-intro">
-            <h2 class="section-title">Faça seu Cadastro</h2>
-            <p>Registre-se para receber novidades, promoções exclusivas e facilitar suas encomendas para festas e eventos!</p>
+            <h2 class="section-title">Solicite um Orçamento</h2>
+            <p>Preencha os dados abaixo e entraremos em contato pelo WhatsApp com as melhores condições para o seu evento!</p>
         </div>
 
         <div id="form-wrapper">
@@ -718,50 +844,46 @@
                         <input type="text" id="nome" placeholder="Seu nome" required>
                     </div>
                     <div class="form-group">
-                        <label for="telefone">Telefone / WhatsApp *</label>
+                        <label for="telefone">WhatsApp *</label>
                         <input type="tel" id="telefone" placeholder="(11) 99999-9999" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" placeholder="seu@email.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="bairro">Bairro / Cidade</label>
-                        <input type="text" id="bairro" placeholder="Ex: Centro, Suzano">
-                    </div>
-                    <div class="form-group">
-                        <label for="interesse">Interesse principal</label>
-                        <select id="interesse">
+                        <label for="tipo-evento">Tipo de evento *</label>
+                        <select id="tipo-evento" required>
                             <option value="">Selecione...</option>
-                            <option value="consumo">Consumo regular</option>
-                            <option value="festa">Encomenda para festa</option>
-                            <option value="evento">Evento corporativo</option>
+                            <option value="aniversario">Aniversário</option>
+                            <option value="casamento">Casamento</option>
+                            <option value="formatura">Formatura</option>
+                            <option value="corporativo">Evento Corporativo</option>
+                            <option value="infantil">Festa Infantil</option>
                             <option value="outro">Outro</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="como">Como nos conheceu?</label>
-                        <select id="como">
+                        <label for="data-evento">Data do evento *</label>
+                        <input type="date" id="data-evento" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="convidados">Número de convidados</label>
+                        <select id="convidados">
                             <option value="">Selecione...</option>
-                            <option value="instagram">Instagram</option>
-                            <option value="indicacao">Indicação de amigo</option>
-                            <option value="passando">Passei pela rua</option>
-                            <option value="outro">Outro</option>
+                            <option value="ate50">Até 50 pessoas</option>
+                            <option value="50-100">50 a 100 pessoas</option>
+                            <option value="100-200">100 a 200 pessoas</option>
+                            <option value="200+">Mais de 200 pessoas</option>
                         </select>
                     </div>
-                    <div class="form-group full">
-                        <label for="mensagem">Mensagem ou pedido especial</label>
-                        <textarea id="mensagem" placeholder="Conte-nos mais, peça uma encomenda ou tire dúvidas..."></textarea>
+                    <div class="form-group">
+                        <label for="cidade">Cidade do evento</label>
+                        <input type="text" id="cidade" placeholder="Ex: Suzano, Mogi das Cruzes...">
                     </div>
                     <div class="form-group full">
-                        <label class="form-check">
-                            <input type="checkbox" id="aceite" required>
-                            <span>Concordo em receber novidades e promoções da Pipocas Aguiar via WhatsApp ou e-mail. *</span>
-                        </label>
+                        <label for="mensagem">Detalhes adicionais</label>
+                        <textarea id="mensagem" placeholder="Horário do evento, local, algum pedido especial..."></textarea>
                     </div>
                 </div>
                 <button type="submit" class="btn-submit">
-                    <span>Enviar Cadastro</span>
+                    <span>Solicitar Orçamento via WhatsApp</span>
                     <span>→</span>
                 </button>
             </form>
@@ -769,8 +891,8 @@
 
         <div class="form-success" id="form-success">
             <div class="success-icon">✅</div>
-            <h3>Cadastro enviado!</h3>
-            <p>Obrigado pelo contato! Em breve a equipe Pipocas Aguiar entrará em contato com você. 🍿</p>
+            <h3>Solicitação enviada!</h3>
+            <p>Ótimo! Você será redirecionado ao WhatsApp para finalizar. Em breve entraremos em contato. 🍿</p>
         </div>
     </section>
 
@@ -784,7 +906,7 @@
 
     <!-- FLOAT INSTAGRAM -->
     <a href="https://www.instagram.com/pipocasaguiar/" target="_blank" class="insta-float">
-        <img src="./assets/logo intagram.jpg" alt="Instagram">
+        <img src="./assets/logo_intagram-removebg-preview.png" alt="Instagram">
         <span>Siga-nos!</span>
     </a>
 
@@ -865,40 +987,39 @@
 
             const nome = document.getElementById('nome').value.trim();
             const telefone = document.getElementById('telefone').value.trim();
-            const aceite = document.getElementById('aceite').checked;
+            const tipoEvento = document.getElementById('tipo-evento').value;
+            const dataEvento = document.getElementById('data-evento').value;
 
-            if (!nome || !telefone) {
-                shake(document.getElementById(nome ? 'telefone' : 'nome'));
-                return;
-            }
+            if (!nome) { shake(document.getElementById('nome')); return; }
+            if (!telefone) { shake(document.getElementById('telefone')); return; }
+            if (!tipoEvento) { shake(document.getElementById('tipo-evento')); return; }
+            if (!dataEvento) { shake(document.getElementById('data-evento')); return; }
 
-            if (!aceite) {
-                shake(document.getElementById('aceite').closest('.form-check'));
-                return;
-            }
-
-            // Monta mensagem para WhatsApp (opcional — envio via WA)
-            const interesse = document.getElementById('interesse').value;
+            const convidados = document.getElementById('convidados').value;
+            const cidade = document.getElementById('cidade').value;
             const mensagem = document.getElementById('mensagem').value;
-            const email = document.getElementById('email').value;
+
+            const dataFormatada = dataEvento
+                ? new Date(dataEvento + 'T12:00:00').toLocaleDateString('pt-BR')
+                : '—';
 
             const texto = encodeURIComponent(
-                `Olá! Gostaria de me cadastrar.\n\n` +
+                `Olá! Gostaria de solicitar um orçamento para um evento. 🍿\n\n` +
                 `*Nome:* ${nome}\n` +
-                `*Telefone:* ${telefone}\n` +
-                `*E-mail:* ${email || '—'}\n` +
-                `*Interesse:* ${interesse || '—'}\n` +
-                `*Mensagem:* ${mensagem || '—'}`
+                `*WhatsApp:* ${telefone}\n` +
+                `*Tipo de evento:* ${tipoEvento}\n` +
+                `*Data do evento:* ${dataFormatada}\n` +
+                `*Convidados:* ${convidados || '—'}\n` +
+                `*Cidade:* ${cidade || '—'}\n` +
+                `*Detalhes:* ${mensagem || '—'}`
             );
 
-            // Mostrar sucesso
             document.getElementById('form-wrapper').style.display = 'none';
             const success = document.getElementById('form-success');
             success.style.display = 'block';
 
-            // Abrir WhatsApp após 1.2s (número fictício — troque pelo número real)
             setTimeout(() => {
-                window.open(`https://wa.me/55119970161767text=${texto}`, '_blank');
+                window.open(`https://wa.me/5511997016167?text=${texto}`, '_blank');
             }, 1200);
         }
 
